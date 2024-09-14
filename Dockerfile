@@ -1,10 +1,12 @@
 FROM debian:latest
 
-RUN apt-get update && apt-get install -y openjdk-11-jdk
+RUN apt update -y && apt install default-jdk -y
 
 WORKDIR /app
 
 COPY . /app
+
+WORKDIR /app/src
 
 RUN javac Main.java
 
